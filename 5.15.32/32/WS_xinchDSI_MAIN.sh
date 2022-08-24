@@ -2,11 +2,11 @@
 #!/bin/bash
 
 SCREEN_TYPE_ALL=(
-	"2_8inch"		
-	"4inch"
-	"7inch"
-	"7_9_1inch"
-	"11_9_1inch"
+	"2_8INCH"		
+	"4INCH"
+	"7INCH"
+	"7_9INCH"
+	"11_9INCH"
 )
 
 I2C_TYPE_ALL=(

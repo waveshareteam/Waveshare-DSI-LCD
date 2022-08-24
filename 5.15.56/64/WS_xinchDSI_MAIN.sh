@@ -5,8 +5,8 @@ SCREEN_TYPE_ALL=(
 	"2_8INCH"
 	"4INCH"
 	"7INCH"
-	"7_9_INCH"
-	"11_9_INCH"
+	"7_9INCH"
+	"11_9INCH"
 )
 
 I2C_TYPE_ALL=(
