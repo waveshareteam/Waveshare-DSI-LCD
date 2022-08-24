@@ -18,9 +18,9 @@ cd 32
 #7inch DSI LCD (C) 1024×600：
 sudo bash ./WS_xinchDSI_MAIN.sh 7INCH I2C1
 #7.9ich DSI LCD 400×1280：
-#sudo bash ./WS_xinchDSI_MAIN.sh 7_9_INCH I2C0
+#sudo bash ./WS_xinchDSI_MAIN.sh 7_9INCH I2C0
 #11.9inch DSI LCD 320×1480：
-#sudo bash ./WS_xinchDSI_MAIN.sh 11_9_INCH I2C0
+#sudo bash ./WS_xinchDSI_MAIN.sh 11_9INCH I2C0
 #2.8inch DSI LCD 480×640：
 #sudo bash ./WS_xinchDSI_MAIN.sh 2_8INCH I2C0
 #4inch DSI LCD 480×800：
