@@ -2,15 +2,21 @@
 #!/bin/bash
 
 SCREEN_TYPE_ALL=(
-	"2_8INCH"
-	"4INCH"
-	"7INCH"
-	"10_1INCH_8INCH_LVDS_1280X720_ICN6211"
-	"10_1INCH_LVDS_1280X800"
-	"7_9_INCH"
-	"11_9_INCH"
-	"10_1INCH_8INCH_LVDS_1280X720_ICN6202"
-	"10_1INCH_8INCH_MIPI_1280X800"
+	"28"                                            		#"2_8INCH"
+	"40"                                              		#"4INCH"
+	"70C"                                              		#"7INCH"
+	"RESERVE1"       										#"10_1INCH_8INCH_LVDS_1280X720_ICN6211_SSD2828"
+	"RESERVE2"                              				#"10_1INCH_LVDS_1280X800"
+	"79"													#"7_9_INCH"
+	"119"													#"11_9_INCH"
+	"RESERVE3"               								#"10_1INCH_8INCH_LVDS_1280X720_ICN6202"
+	
+#Note: The 80C and 101C drivers are the same and will be handled in the script below
+	"80C"                       							#"10_1INCH_8INCH_MIPI_1280X800"
+
+	"RESERVE4"						         				#"3_4INCH_MIPI_800X800"						
+	"RESERVE5"							     				#"4INCH_MIPI_720X720"							
+	"RESERVE6"	                             				#"2_8INCH_MIPI_480X480"	
 )
 
 I2C_TYPE_ALL=(
@@ -19,20 +25,21 @@ I2C_TYPE_ALL=(
 )
 
 Type_print(){
-	echo SCREEN_TYPE: ${SCREEN_TYPE_ALL[@]} 
-	echo I2C_TYPE: ${I2C_TYPE_ALL[@]} 
+	echo "    SCREEN_TYPE: ${SCREEN_TYPE_ALL[@]} 101C" 
+	echo "    I2C_TYPE:    ${I2C_TYPE_ALL[@]} "
 }
 
 if [ $# -ne 2 ]; then
-	echo The script runs with two parameters in the following format
-	echo sudo ./$0 SCREEN_TYPE I2C_TYPE
+	echo "The script runs with two parameters in the following format"
 	Type_print
+	echo "example:  "
+	echo "    sudo $0 SCREEN_TYPE I2C_TYPE"
 	exit 1
 fi
-Type_print
+
 
 #----------------------------------------Set up to use that screen driver START----------------------------------------
-#Print supported SCREEN_TYPE
+
 SCREEN_TYPE=${SCREEN_TYPE_ALL[@]} 
 #echo This driver supports SCREEN_TYPE is ${SCREEN_TYPE[@]} 
 
@@ -47,17 +54,28 @@ SCREEN_TYPE_PARAM="$1"
 
 SCREEN_TYPE_i=0
 SCREEN_TYPE_INDEX=255
+INDEX_80C=0
 for i in ${SCREEN_TYPE[@]} 
 do  
 	if [ "$SCREEN_TYPE_PARAM" = "$i" ];then
 		SCREEN_TYPE_INDEX=$SCREEN_TYPE_i
 #		echo "Correctly matched to the SCREEN_TYPE list $SCREEN_TYPE_INDEX"
 	fi
+
+	if [ "80C" = "$i" ];then
+		INDEX_80C=$SCREEN_TYPE_i
+	fi
+
+	if [ "$SCREEN_TYPE_PARAM" = "101C" ];then
+		SCREEN_TYPE_INDEX=$INDEX_80C
+	fi
+
 	let SCREEN_TYPE_i++
 done  
 
 if [ $SCREEN_TYPE_INDEX -eq 255 ]; then
 	printf "The parameter is not found in the SCREEN_TYPE list. Check whether the parameter is correct  \n"
+	echo "    SCREEN_TYPE: ${SCREEN_TYPE_ALL[@]} "
 	exit 1
 fi
 
@@ -68,7 +86,7 @@ DRIVE_PARAM1="SCREEN_type=$SCREEN_TYPE_INDEX"
 
 
 #-------------------------------------------Set up to use that I2C bus START-------------------------------------------
-#Print supported I2C_TYPE
+
 I2C_TYPE=${I2C_TYPE_ALL[@]} 
 #echo This driver supports I2C_TYPE is ${I2C_TYPE[@]} 
 
@@ -94,6 +112,7 @@ done
 
 if [ $I2C_TYPE_INDEX -eq 255 ]; then
 	printf "The parameter is not found in the I2C_TYPE list. Check whether the parameter is correct  \n"
+	echo "    I2C_TYPE:    ${I2C_TYPE_ALL[@]} "
 	exit 1
 fi
 

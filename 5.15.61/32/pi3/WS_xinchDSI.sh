@@ -22,6 +22,8 @@ cd ./Driver_package
 #Move driver file
 sudo cp WS_xinchDSI_Touch.ko /lib/modules/$(uname -r)
 sudo cp WS_xinchDSI_Screen.ko /lib/modules/$(uname -r)
+sudo cp WS_xinchDSI_Touch_Interface.ko /lib/modules/$(uname -r)
+sudo cp WS_xinchDSI_Screen_Interface.ko /lib/modules/$(uname -r)
 sudo cp WS_xinchDSI_Touch.dtbo /boot/overlays
 sudo cp WS_xinchDSI_Screen.dtbo /boot/overlays
 
@@ -59,7 +61,7 @@ if [ "SCREEN_type=4" = "$1" ];then
 	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2"
 fi
 if [ "SCREEN_type=5" = "$1" ];then
-	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,invertedy"
+	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,swappedxy"
 fi
 if [ "SCREEN_type=6" = "$1" ];then
 	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,swappedxy"
@@ -68,7 +70,7 @@ if [ "SCREEN_type=7" = "$1" ];then
 	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2"
 fi
 if [ "SCREEN_type=8" = "$1" ];then
-	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2"
+	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,swappedxy"
 fi
 if [ "SCREEN_type=9" = "$1" ];then
 	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2"
