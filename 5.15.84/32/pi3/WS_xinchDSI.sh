@@ -61,7 +61,7 @@ if [ "SCREEN_type=4" = "$1" ];then
 	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2"
 fi
 if [ "SCREEN_type=5" = "$1" ];then
-	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,swappedxy"
+	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,invertedy"
 fi
 if [ "SCREEN_type=6" = "$1" ];then
 	Data_Insertion config.txt  "dtoverlay=WS_xinchDSI_Touch,$2,invertedx,swappedxy"
