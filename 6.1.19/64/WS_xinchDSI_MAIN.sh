@@ -14,8 +14,8 @@ SCREEN_TYPE_ALL=(
 #Note: The 80C and 101C drivers are the same and will be handled in the script below
 	"80C"                       							#"10_1INCH_8INCH_MIPI_1280X800"
 
-	"RESERVE4"						         				#"3_4INCH_MIPI_800X800"						
-	"RESERVE5"							     				#"4INCH_MIPI_720X720"							
+	"34C"						         				#"3_4INCH_MIPI_800X800"						
+	"40C"							     				#"4INCH_MIPI_720X720"							
 	"RESERVE6"	                             				#"2_8INCH_MIPI_480X480"	
 )
 

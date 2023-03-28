@@ -15,8 +15,12 @@ cd 32
 #Step 4: Enter your corresponding model command to install the driver, pay attention to the selection of the I2C DIP switch
 #2.8inch DSI LCD 480×640：
 sudo bash ./WS_xinchDSI_MAIN.sh 28 I2C0
+#3.4inch DSI LCD (C) 800×800
+sudo bash ./WS_xinchDSI_MAIN.sh 34C I2C0
 #4inch DSI LCD 480×800：
 sudo bash ./WS_xinchDSI_MAIN.sh 40 I2C0
+#4inch DSI LCD (C) 720×720
+sudo bash ./WS_xinchDSI_MAIN.sh 40C I2C0
 #7inch DSI LCD (C) 1024×600：
 sudo bash ./WS_xinchDSI_MAIN.sh 70C I2C1
 #7.9ich DSI LCD 400×1280：
@@ -51,8 +55,12 @@ cd 32
 #第四步：选择您对应的型号，复制指令安装驱动，如需修改I2C0 / I2C1，请注意选择正确的拨码开关再上电使用；
 #2.8inch DSI LCD 480×640：
 sudo bash ./WS_xinchDSI_MAIN.sh 28 I2C0
+#3.4inch DSI LCD (C) 800×800
+sudo bash ./WS_xinchDSI_MAIN.sh 34C I2C0
 #4inch DSI LCD 480×800：
 sudo bash ./WS_xinchDSI_MAIN.sh 40 I2C0
+#4inch DSI LCD (C) 720×720
+sudo bash ./WS_xinchDSI_MAIN.sh 40C I2C0
 #7inch DSI LCD (C) 1024×600：
 sudo bash ./WS_xinchDSI_MAIN.sh 70C I2C1
 #7.9ich DSI LCD 400×1280：
