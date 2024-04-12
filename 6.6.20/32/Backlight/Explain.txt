@@ -1,0 +1,30 @@
+Backlight adjustment method
+
+1. Use the WS_xinchDSI_Backlight_armhf executable file in the Backlight folder
+1. cd Backlight
+2. sudo chmod 777 WS_xinchDSI_Backlight_armhf
+3. Run sudo ./WS_xinchDSI_Backlight_armhf on the terminal or double-click WS_xinchDSI_Backlight_armhf
+
+2. Install WS_xinchDSI_Backlight_armhf to Accessories
+1. CD Backlight
+2. sudo chmod 777 install.sh
+3. sudo ./install.sh
+4. Open the program in Start Menu->Accessories
+----------------
+背光调节方法
+
+一、使用Backlight文件夹中的WS_xinchDSI_Backlight_armhf可执行文件
+	1、cd Backlight
+	2、sudo chmod 777 WS_xinchDSI_Backlight_armhf
+	3、终端运行 sudo  ./WS_xinchDSI_Backlight_armhf 或者双击WS_xinchDSI_Backlight_armhf
+
+二、将WS_xinchDSI_Backlight_armhf安装至Accessories
+	1、cd Backlight
+	2、sudo chmod 777 install.sh
+	3、sudo ./install.sh
+	4、在开始菜单->Accessories中打开程序
+	
+
+
+
+
