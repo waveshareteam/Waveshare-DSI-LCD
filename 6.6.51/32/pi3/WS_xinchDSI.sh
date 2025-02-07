@@ -93,5 +93,11 @@ fi
 if [ "SCREEN_type=17" = "$1" ]; then
 	Data_Insertion config.txt "dtoverlay=ilitek,$2"
 fi
+if [ "SCREEN_type=18" = "$1" ]; then
+	Data_Insertion config.txt "dtoverlay=WS_xinchDSI_Touch,$2"
+fi
+if [ "SCREEN_type=19" = "$1" ]; then
+	Data_Insertion config.txt "dtoverlay=WS_xinchDSI_Touch,$2,swappedxy,invertedx"
+fi
 #Driver end Settings
 echo "Driver end Settings"

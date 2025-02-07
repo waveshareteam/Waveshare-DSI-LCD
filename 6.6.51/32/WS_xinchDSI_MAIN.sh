@@ -16,11 +16,13 @@ SCREEN_TYPE_ALL=(
     "40C"      #"4INCH_MIPI_720X720"
     "RESERVE6" #"2_8INCH_MIPI_480X480"
     "88"       # 8_8INCH_480x1920 for pi5 4lanes
-    "133_Pi5" # 13.3inch dp interface 1080p 60fps Applicable to: pi5
+    "133_60fps" # 13.3inch dp interface 1080p 60fps Applicable to: pi5
     "50"       # 5inch 720x1280
     "625"      # 6.25inch 720x1560
     "88G"      # 8.8inch 480x1920 for pi3 pi4 pi5 2lanes
-    "133_Pi4" # 13.3inch dp interface 1080p 30fps Applicable to: pi3 pi4
+    "133_30fps" # 13.3inch dp interface 1080p 30fps Applicable to: pi3 pi4
+    "70A"      #7inch 720x1280"
+    "70H"      #7inch 1280x720"
 )
 
 I2C_TYPE_ALL=(
